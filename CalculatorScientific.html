@@ -1,0 +1,303 @@
+<html>
+<title>Calculator</title>
+    <p align ="center">
+        <b><font size="10"><u>
+            
+            Simple Calculator
+            
+            </u>
+            
+            
+            </font>
+            <br>
+
+        </b>
+    </p>
+<head>
+<style type="text/css">
+
+.border-style{
+    
+          
+           
+            
+           
+            background: lightgrey ;
+            
+              
+}
+
+.input-style{
+      background:orange   ;
+            width: 60px ;
+            font-size: 20px ;
+            color: black;
+            font-weight: 900 ;
+            margin : 2% ;
+            border-radius: 8px ;
+            height: 40px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            float: left ;
+            border: 1px solid lightgrey;
+            text-decoration: inherit;
+}
+
+    </style>
+    
+
+    <body background="galaxy_view_s5-wallpaper-10758201.jpg">
+
+<form name="calc">
+
+<br><br><br><br><table  align="center" width="40%" style="border:solid" height="350px" >
+
+    <tr>
+        <td colspan="5" height="50px" width="91%" class="border-style">
+            <input id="input" type="text" name="Num" value=" "       style="width:98%; height:60px ; background-color: #bccd95 ; font-size: 40px" />
+        </td>
+        <td align="center" width="14.2%" class="border-style">
+            <input type="button" value="<-"    onclick="deleteDigit(this.form.Num)" class="input-style"    />
+        </td>
+         <td align="center" width="14.2%" class="border-style">
+            
+        </td>
+        
+    </tr>
+
+    <tr>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="x^y" onclick="power(this.form)"      class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="Sin"   onclick="sin(this.form)"class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="7" onclick="document.calc.Num.value += '7'" class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="8" onclick="document.calc.Num.value += '8'" class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="9" onclick="document.calc.Num.value += '9'" class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="+/-"onclick="flipSign(this.form.Num)" class="input-style" />
+        </td>
+        <td align="center" width="14.2%" class="border-style">
+            <input type="button" value="CE" onclick="document.calc.Num.value = ' ' "  class="input-style" />
+        </td>
+        
+    </tr>
+
+    <tr>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="root" onclick="sqrt(this.form)" class="input-style"/>
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="cos" onclick="cos(this.form)" class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="4" onclick="document.calc.Num.value +='4'" class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="5"onclick="document.calc.Num.value +='5'" class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="6"onclick="document.calc.Num.value +='6'" class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="+"onclick="document.calc.Num.value +='+'" class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="mod"onclick="document.calc.Num.value +='%'" class="input-style"/>
+        </td>
+        
+    </tr>
+
+    <tr>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="n!"onclick="factorial(this.form)" class="input-style"/>
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="tan"onclick="tan(this.form)" class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="1"onclick="document.calc.Num.value +='1'" class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="2"onclick="document.calc.Num.value +='2'" class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="3"onclick="document.calc.Num.value +='3'" class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="*"onclick="document.calc.Num.value +='*'" class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="-"onclick="document.calc.Num.value +='-'" class="input-style" />
+        </td>
+       
+   </tr>
+   <tr>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="10^x" onclick="powerten(this.form)"  class="input-style" />
+        </td>
+        
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="log"onclick="lg(this.form)"  class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="0"onclick="document.calc.Num.value +='0'"  class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="." onclick="document.calc.Num.value +='.'"  class="input-style" />
+        </td>
+        
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="Ans" onclick="SaveANS()"  class="input-style" />
+        </td>
+        <td  height="40px" width="14.2%" class="border-style">
+            <input type="button" value="=" onclick="equal(this.form)"  class="input-style" />
+        </td>
+       <td   class="border-style">
+            <input type="button" value="/"onclick="document.calc.Num.value +='/'" class="input-style" />
+        </td>
+   </tr>
+
+   </table>
+
+   <script type="text/javascript" >
+
+
+var Ans=0;
+
+
+
+function deleteDigit(Num) {
+    Num.value = Num.value.substring(0, Num.value.length - 1)
+} 
+
+
+
+function power(n){ 
+    if (n.Num.value != "" && n.Num.value != 0 ){
+        var p=prompt("Enter the power:")
+        n.Num.value = Math.pow(n.Num.value,p)
+        Ans=n.Num.value;
+    }
+    else 
+        alert("Enter a number first")   
+}
+
+
+
+function sin(n) {
+    n.Num.value = Math.sin(n.Num.value);
+    Ans=n.Num.value;
+}
+
+
+ 
+function flipSign(Num) {
+    if(Num.value.substring(0, 1) == "-")
+        Num.value = Num.value.substring(1, Num.value.length)
+    else
+        Num.value = "-" + Num.value
+}
+
+
+
+function sqrt(n) {
+    if (n.Num.value != "" && n.Num.value != 0 ){
+        var p=prompt("Enter the root:")
+        p=1/p;
+        n.Num.value = Math.pow(n.Num.value,p)
+        Ans=n.Num.value;
+    }
+    else 
+        alert(" please input the number first  !!!")   
+}
+
+
+
+
+function cos(n) {
+    n.Num.value = Math.cos(n.Num.value);
+    Ans=n.Num.value;
+}
+
+
+
+function factorial(n){
+    var var1, var2;
+    var1=1;
+    var2=1;
+    var x=n.Num.value;
+
+    do {
+        var1=var1*var2;
+        var2=1+var2;
+    }while(var2<=x);
+
+    n.Num.value =var1;
+    Ans=var1; 
+ }
+
+
+
+function tan(n) {
+    n.Num.value = Math.tan(n.Num.value);
+    Ans=n.Num.value;
+}
+
+
+
+
+
+function lg(form) {
+    n.Num.value = Math.log(n.Num.value);
+    Ans=n.Num.value;
+}
+
+
+
+function powerten(n) {  
+    var x=n.Num.value;
+    n.Num.value = Math.pow(10,x)
+    Ans=n.Num.value;
+}
+
+
+function equal(n){
+   
+    var var1=eval(document.getElementById("input").value);
+    result = eval(var1) ;
+    document.getElementById("input").value = result ;
+    Ans=result;
+    
+    
+}
+
+
+function SaveANS(){
+    document.getElementById("input").value =Ans;
+    
+}
+       document.onkeydown=function(event)
+       {
+           var key_code=event.keyCode;
+           if(key_code==13)
+           {
+   event.preventDefault();
+    var x=equal(this.form) ;
+    calc.display.value = x ;
+       }
+       }
+
+    </script>
+
+    </form>
+    </body>
+
+    </html></html>
+    
